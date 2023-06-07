@@ -1,11 +1,2 @@
 #!/bin/bash
-html_files=$(find . -maxdepth 1 -name "*.html" -type f)
-
-for file in $html_files; do
-    filename=$(basename "$file")
-    parent_file="../$filename"
-
-    if [ ! -e "$parent_file" ] || [ "$file" -nt "$parent_file" ]; then
-        cp "$file" "../"
-    fi
-done
+cp *.html ..
